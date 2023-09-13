@@ -1,5 +1,5 @@
 import { BasicLayout,BasicLogin } from "../layouts";
-import { Home, ReportePage, UsuarioPage } from "../pages";
+import { Home, ReportePage, UsuarioPage,InformePage,GeolocalizacionPage } from "../pages";
 import { LoginAdmin } from "../pages/Admin";
 
 
@@ -20,6 +20,18 @@ import { LoginAdmin } from "../pages/Admin";
         path:"/reporte", 
         layout: BasicLayout, 
         component: ReportePage,
+        exact: true,
+    },
+    {
+        path:"/informe", 
+        layout: BasicLayout, 
+        component: InformePage,
+        exact: true,
+    },
+    {
+        path:"/geolocalizacion", 
+        layout: BasicLayout, 
+        component: GeolocalizacionPage,
         exact: true,
     },
     // funcionalidad del admin - usuarios

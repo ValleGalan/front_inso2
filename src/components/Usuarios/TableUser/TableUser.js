@@ -9,7 +9,7 @@ import {
   Paper,
   Button,
   IconButton,
-  Avatar,
+  TextField
 } from "@mui/material";
 import { Edit, Close as CloseIcon, Check as CheckIcon } from "@mui/icons-material";
 import { map } from "lodash";
@@ -19,6 +19,27 @@ export function TableUser(props) {
   const { usuarios, updateUsuario, deleteUsuario } = props;
 
   return (
+    <div>
+            <div className="form-row"  style={{ marginBottom: "16px" }}>
+        <TextField
+          label="Buscar"
+          variant="outlined"
+          fullWidth
+          //value={searchTerm}
+          //onChange={handleSearch}
+          className="search-input"
+        />
+
+        <Button
+          type="submit"
+          variant="contained"
+          color="secondary"
+        >
+          Registrar Usuario
+        </Button>
+      </div>
+
+    
     <TableContainer component={Paper} className="table-product-admin">
       <Table>
         <TableHead>
@@ -59,6 +80,7 @@ export function TableUser(props) {
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
   );
 }
 

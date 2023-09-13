@@ -32,7 +32,7 @@ function MenuLeft(props) {
           <ListItemText primary="Informes" />
         </ListItem>
 
-        <ListItem button component={Link} to="/mapa" selected={pathname === "/mapa"}>
+        <ListItem button component={Link} to="/geolocalizacion" selected={pathname === "/geolocalizacion"}>
           <ListItemIcon> <LocationOn style={{ color: 'white' }}/> </ListItemIcon>
           <ListItemText primary="Geolocalización" />
         </ListItem>

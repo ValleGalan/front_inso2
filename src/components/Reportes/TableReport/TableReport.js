@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -8,51 +8,85 @@ import {
   TableRow,
   Paper,
   Button,
-  IconButton,
-  Avatar,
+  IconButton, TextField, Grid
 } from "@mui/material";
-import { Edit, Close as CloseIcon, Check as CheckIcon } from "@mui/icons-material";
+import { Edit, Close as CloseIcon } from "@mui/icons-material";
 import { map } from "lodash";
 import "./TableReport.css";
 
 export function TableReport(props) {
   const { reportes, updateReporte, deleteReporte } = props;
-
+  /*
+  
+    const [searchTerm, setSearchTerm] = useState(""); 
+  
+    const filteredReportes = reportes.filter((reporte) =>
+      reporte.num_reporte.includes(searchTerm) ||
+      reporte.prioridad.includes(searchTerm) ||
+      reporte.categoria.includes(searchTerm) || 
+      reporte.investigador.includes(searchTerm) || 
+      reporte.estado.includes(searchTerm) 
+    );
+  
+    const handleSearch = (event) => {
+      setSearchTerm(event.target.value);
+    };
+  */
   return (
-    <TableContainer component={Paper} className="table-product-admin">
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Numero de Reporte</TableCell>
-            <TableCell>Prioridad</TableCell>
-            <TableCell>Categoria</TableCell>
-            <TableCell>Investigador</TableCell>
-            <TableCell>Estado</TableCell>
-            <TableCell>Acciones</TableCell>
+    <div>
+      <div className="form-row"  style={{ marginBottom: "16px" }}>
+        <TextField
+          label="Buscar"
+          variant="outlined"
+          fullWidth
+          //value={searchTerm}
+          //onChange={handleSearch}
+          className="search-input"
+        />
 
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {map(reportes, (reporte, index) => (
-            <TableRow key={index}>
-              <TableCell>{reporte.num_reporte}</TableCell>
-              <TableCell>{reporte.prioridad} </TableCell>
-              <TableCell>{reporte.categoria}</TableCell>
-              <TableCell>{reporte.investigador}</TableCell>
-              <TableCell>{reporte.estado}</TableCell>
+        <Button
+          type="submit"
+          variant="contained"
+          color="secondary"
+        >
+          Registrar Reporte
+        </Button>
+      </div>
+      <TableContainer component={Paper} className="table-product-admin">
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Numero de Reporte</TableCell>
+              <TableCell>Prioridad</TableCell>
+              <TableCell>Categoria</TableCell>
+              <TableCell>Investigador</TableCell>
+              <TableCell>Estado</TableCell>
+              <TableCell>Acciones</TableCell>
 
-              <TableCell>
-                <Actions
-                  reporte={reporte}
-                  updateReporte={updateReporte}
-                  deleteReporte={deleteReporte}
-                />
-              </TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {map(reportes, (reporte, index) => (
+              <TableRow key={index}>
+                <TableCell>{reporte.num_reporte}</TableCell>
+                <TableCell>{reporte.prioridad} </TableCell>
+                <TableCell>{reporte.categoria}</TableCell>
+                <TableCell>{reporte.investigador}</TableCell>
+                <TableCell>{reporte.estado}</TableCell>
+
+                <TableCell>
+                  <Actions
+                    reporte={reporte}
+                    updateReporte={updateReporte}
+                    deleteReporte={deleteReporte}
+                  />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }
 
