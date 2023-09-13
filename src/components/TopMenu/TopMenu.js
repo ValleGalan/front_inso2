@@ -16,7 +16,7 @@ export function TopMenu() {
   };
  */
   return (
-    <AppBar position= "absolute">
+      <AppBar color="" style={{ paddingLeft: "250px" }}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }} className="top-menu-texto">
         Top menu cambiara x pag

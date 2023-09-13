@@ -4,7 +4,7 @@
   grid-template-rows: 55px 1fr;
   grid-template-areas:
     "menu"
-    "content";
+    "main-content";
   min-height: 100vh;
 }
 
@@ -13,5 +13,5 @@
 }
 
 .basic-layout__main-content {
-  grid-area: content;
+  grid-area: main-content;
 }
