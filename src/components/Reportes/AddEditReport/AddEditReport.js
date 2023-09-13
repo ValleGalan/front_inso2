@@ -27,7 +27,7 @@ export function AddEditProductForm(props) {
 
     return (
     <form className="add-edit-reporte-form" onSubmit={formik.handleSubmit}>
-      <h1> Registrar Reporte</h1>
+      <h2 className="texto-azul"> Registrar Reporte</h2>
     <Grid container spacing={2}>
 
         <Grid item xs={12}>

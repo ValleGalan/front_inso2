@@ -21,3 +21,8 @@ code {
   --color-texto-primary:#ffffff; /*color del texto*/
   --color-icons:#f4f6f9;
 }
+
+.texto-azul{
+  color: var(--color-primary);
+  text-align: center;
+}

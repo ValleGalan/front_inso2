@@ -37,7 +37,14 @@ const [estadoFormat, setEstadoFormat] = useState([]);
 });
 
     return (
-    <form className="add-edit-user-form" onSubmit={formik.handleSubmit}>
+    <form   onSubmit={formik.handleSubmit} >
+        <h2 className="texto-azul"> Registrar Usuario</h2>
+        <p>nota: agrege la contraseña xq cuando creamos un usuario no deberiamos
+            ponerle su contraseña? si decis que no va omitilo ajja y decime asi lo borro
+            tambien puse eso de esado de usuario fijate si va o lo borramos,
+            en los campos num celular y telefono lo uni como num celular
+        </p>
+        <div className="form-row">
         <TextField
             fullWidth
             variant="outlined"
@@ -46,7 +53,10 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             name="dni"
             value={formik.values.dni}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
         />
+
+        <div className="form-row">
         <TextField
         name="nombre"
         label="Nombre"
@@ -55,7 +65,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         onChange={formik.handleChange}
         error={formik.touched.nombre && Boolean(formik.errors.nombre)}
         helperText={formik.touched.nombre && formik.errors.nombre}
+        style={{ marginBottom: "16px" }}
         />
+
         <TextField
         name="apellido"
         label="Apellidos"
@@ -64,7 +76,10 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         onChange={formik.handleChange}
         error={formik.touched.apellido && Boolean(formik.errors.apellido)}
         helperText={formik.touched.apellido && formik.errors.apellido}
+        style={{ marginBottom: "16px" }}
         />
+        </div>   
+           
         <TextField
         name="email"
         label="Correo electrónico"
@@ -73,7 +88,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         onChange={formik.handleChange}
         error={formik.touched.email && Boolean(formik.errors.email)}
         helperText={formik.touched.email && formik.errors.email}
+        style={{ marginBottom: "16px" }}
         />
+
         <TextField
         name="username"
         label="Nombre de usuario"
@@ -82,7 +99,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         onChange={formik.handleChange}
         error={formik.touched.username && Boolean(formik.errors.username)}
         helperText={formik.touched.username && formik.errors.username}
+        style={{ marginBottom: "16px" }}
         />
+
         <TextField
         name="password"
         label="Contraseña"
@@ -92,7 +111,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         onChange={formik.handleChange}
         error={formik.touched.password && Boolean(formik.errors.password)}
         helperText={formik.touched.password && formik.errors.password}
+        style={{ marginBottom: "16px" }}
         />
+
         <TextField
             fullWidth
             variant="outlined"
@@ -100,7 +121,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             name="domicilio"
             value={formik.values.domicilio}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
         />
+
         <TextField
             fullWidth
             variant="outlined"
@@ -109,7 +132,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             name="num_celular"
             value={formik.values.num_celular}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
         />
+
         <TextField
             fullWidth
             variant="outlined"
@@ -118,8 +143,9 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             name="legajo"
             value={formik.values.legajo}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
         />
-        <Grid item xs={12}>
+
             <FormControl fullWidth variant="outlined">
             <Select
             label="Estado del usuario"
@@ -139,9 +165,7 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             ))}
             </Select>
             </FormControl>
-        </Grid>
 
-        <Grid item xs={12}>
             <FormControl fullWidth variant="outlined">
             <Select
             label="Jerarquia"
@@ -161,12 +185,11 @@ const [estadoFormat, setEstadoFormat] = useState([]);
             ))}
             </Select>
             </FormControl>
-        </Grid>
 
 
 
 
-        <FormControl component="fieldset" fullWidth>
+        <FormControl component="fieldset" fullWidth style={{ marginBottom: "16px" }}>
         <Typography variant="subtitle1">Estado del usuario</Typography>
         <FormGroup row>
             <FormControlLabel
@@ -177,7 +200,7 @@ const [estadoFormat, setEstadoFormat] = useState([]);
                 onChange={formik.handleChange}
                 />
             }
-            label="Usuario activo"
+            label="Usuario secretario"
             />
             <FormControlLabel
             control={
@@ -192,6 +215,7 @@ const [estadoFormat, setEstadoFormat] = useState([]);
         </FormGroup>
       </FormControl>
 
+      </div>
       <Button
         type="submit"
         variant="contained"
@@ -211,6 +235,11 @@ function initialValues(data) {
     nombre: data?.nombre || "",
     apellido: data?.apellido || "",
     password: "",
+    domicilio: data?.domicilio || "",
+    num_celular: data?.num_celular || "",
+    legajo: data?.legajo || "",
+    estado: data?.estado || "",
+    jerarquia: data?.jerarquia || "",
     is_active: data?.is_active || false,
     is_staff: data?.is_staff || false,
     };
