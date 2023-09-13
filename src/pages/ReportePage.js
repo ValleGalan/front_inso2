@@ -1,5 +1,5 @@
 import React from 'react';
-import { AddEditProductForm, TableReport} from "../components/Reportes";
+import { AddEditReporteForm, TableReport} from "../components/Reportes";
 
 export function ReportePage() {
   return (
@@ -9,7 +9,10 @@ export function ReportePage() {
         
         <TableReport></TableReport>
         <h1>Para probar el formulario despues lo volamos</h1>
-        <AddEditProductForm />
+        <div className='form-reporte'>
+        <AddEditReporteForm />
+        </div>
+        
     </div>
   )
 }

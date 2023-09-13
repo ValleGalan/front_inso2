@@ -3,16 +3,16 @@ import {
 FormControl, TextField, Button, Select,MenuItem, Checkbox, FormControlLabel, Grid} from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-//import "./AddEditProductForm.css";
+//import "./AddEditReportForm.css";
 
-export function AddEditProductForm(props) {
+export function AddEditReporteForm(props) {
     const { onClose, onRefetch, reporte } = props;
     const [categoriesFormat, setCategoriesFormat] = useState([]);
     const [prioridadFormat, setprioridadFormat] = useState([]);
     const [estadoFormat, setestadoFormat] = useState([]);
 
     //const { categories, getCategories } = useCategory();
-    //const { addProduct, updateProduct } = useProduct();
+    //const { addReporte, updateReporte } = useReporte();
 
     const formik = useFormik({
         initialValues: initialValues(reporte),
