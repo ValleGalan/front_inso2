@@ -28,9 +28,7 @@ export function AddEditProductForm(props) {
     return (
     <form className="add-edit-reporte-form" onSubmit={formik.handleSubmit}>
       <h2 className="texto-azul"> Registrar Reporte</h2>
-    <Grid container spacing={2}>
-
-        <Grid item xs={12}>
+      <div className="form-row">
             <TextField 
             fullWidth
             variant="outlined"
@@ -41,10 +39,9 @@ export function AddEditProductForm(props) {
             onChange={formik.handleChange}
             error={!!formik.errors.num_reporte}
             helperText={formik.errors.num_reporte}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
 
-        <Grid item xs={12}>
             <TextField
             fullWidth
             variant="outlined"
@@ -54,10 +51,9 @@ export function AddEditProductForm(props) {
             onChange={formik.handleChange}
             error={!!formik.errors.email}
             helperText={formik.errors.email}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
 
-        <Grid item xs={12}>
             <TextField
             fullWidth
             variant="outlined"
@@ -67,21 +63,9 @@ export function AddEditProductForm(props) {
             onChange={formik.handleChange}
             error={!!formik.errors.nombre}
             helperText={formik.errors.nombre}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
-        
-        <Grid item xs={12}>
-            <TextField
-            fullWidth
-            variant="outlined"
-            label="IP del perfil"
-            name="ip_perfil"
-            value={formik.values.ip_perfil}
-            onChange={formik.handleChange}
-            />
-        </Grid>
 
-        <Grid item xs={12}>
             <TextField
             fullWidth
             variant="outlined"
@@ -89,11 +73,10 @@ export function AddEditProductForm(props) {
             name="investigador"
             value={formik.values.investigador}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
 
-        <Grid item xs={12}>
-            <FormControl fullWidth variant="outlined">
+            <FormControl fullWidth variant="outlined" style={{ marginBottom: "16px" }}>
             <Select
             label="Categoria"
             name="categoria"
@@ -112,31 +95,7 @@ export function AddEditProductForm(props) {
             ))}
             </Select>
         </FormControl>
-        </Grid>
 
-        <Grid item xs={12}>
-            <FormControl fullWidth variant="outlined">
-            <Select
-            label="Prioridad"
-            name="prioridad"
-            value={formik.values.prioridad}
-            onChange={formik.handleChange}
-            error={!!formik.errors.prioridad}
-            displayEmpty
-            >
-            <MenuItem value="">
-                <em>Seleccione una prioridad</em>
-            </MenuItem>
-            {prioridadFormat.map((prioridad) => (
-                <MenuItem key={prioridad.value} value={prioridad.value}>
-                {prioridad.text}
-                </MenuItem>
-            ))}
-            </Select>
-            </FormControl>
-        </Grid>
-
-        <Grid item xs={12}>
             <TextField
             fullWidth
             variant="outlined"
@@ -145,10 +104,10 @@ export function AddEditProductForm(props) {
             name="num_telefono"
             value={formik.values.num_telefono}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
-
-        <Grid item xs={12}>
+            
+            <div className="form-row">
             <TextField
             fullWidth
             variant="outlined"
@@ -156,10 +115,19 @@ export function AddEditProductForm(props) {
             name="url"
             value={formik.values.url}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
+            <TextField
+            fullWidth
+            variant="outlined"
+            label="IP del perfil"
+            name="ip_perfil"
+            value={formik.values.ip_perfil}
+            onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
+            />
+            </div>
 
-        <Grid item xs={12}>
             <TextField
             fullWidth
             variant="outlined"
@@ -168,11 +136,12 @@ export function AddEditProductForm(props) {
             name="cant_archivo"
             value={formik.values.cant_archivo}
             onChange={formik.handleChange}
+            style={{ marginBottom: "16px" }}
             />
-        </Grid>
 
-        <Grid item xs={12}>
-            <FormControl fullWidth variant="outlined">
+            <div className="form-row">
+
+            <FormControl fullWidth variant="outlined" style={{ marginBottom: "16px" }}>
             <Select
             label="Estado de la investigación"
             name="estado"
@@ -182,7 +151,7 @@ export function AddEditProductForm(props) {
             displayEmpty
             >
             <MenuItem value="">
-                <em>Seleccione el estado</em>
+                <em>Seleccione el estado de la investigación</em>
             </MenuItem>
             {estadoFormat.map((estado) => (
                 <MenuItem key={estado.value} value={estado.value}>
@@ -191,14 +160,36 @@ export function AddEditProductForm(props) {
             ))}
             </Select>
             </FormControl>
-        </Grid>
 
-        <Grid item xs={12}>
+            <FormControl fullWidth variant="outlined" style={{ marginBottom: "16px" }}>
+            <Select
+            label="Prioridad"
+            name="prioridad"
+            value={formik.values.prioridad}
+            onChange={formik.handleChange}
+            error={!!formik.errors.prioridad}
+            displayEmpty
+            >
+            <MenuItem value="">
+                <em>Seleccione una prioridad </em>
+            </MenuItem>
+            {prioridadFormat.map((prioridad) => (
+                <MenuItem key={prioridad.value} value={prioridad.value}>
+                {prioridad.text}
+                </MenuItem>
+            ))}
+            </Select>
+            </FormControl>
+            </div>
+            
+        </div>
+
+        <div className="form-row">
             <Button
             fullWidth
             type="submit"
             variant="contained"
-            color="primary"
+            color="secondary"
             >
             Cancelar
             </Button>
@@ -211,35 +202,37 @@ export function AddEditProductForm(props) {
             >
             {reporte ? "Actualizar" : "Crear"}
             </Button>
+        </div>
 
-        </Grid>
-
-    </Grid>
     </form>
   );
 }
 
 function formatDropdownData(data) {
   return data.map((item) => ({
-    key: item.id,
-    text: item.nombre,
-    value: item.id,
+
   }));
 }
 //----------- validacion
 function initialValues(data) { //datos de la tabla
   return {
-    nombre: data?.nombre || "",
     num_reporte: data?.num_reporte || "",
+    email: data?.email || "",
+    nombre: data?.nombre || "",
+    investigador: data?.investigador || "",
     categoria: data?.categoria || "",
-    prioridad: data?.prioridad || "",
+    num_telefono: data?.num_telefono || "",
+    url: data?.url || "",
+    ip_perfil: data?.ip_perfil || "",
+    cant_archivo: data?.cant_archivo || "",
     estado: data?.estado || "",
+    prioridad: data?.prioridad || "",
+
   };
 }
 
 function newSchema() {
   return {
-    nombre: Yup.string().required("Campo requerido"),
     num_reporte: Yup.number().required("Campo requerido"),
     categoria: Yup.number().required("Campo requerido"),
   };
@@ -247,7 +240,6 @@ function newSchema() {
 
 function updateSchema() {
   return {
-    nombre: Yup.string().required("Campo requerido"),
     num_reporte: Yup.number().required("Campo requerido"),
     categoria: Yup.number().required("Campo requerido"),
   };

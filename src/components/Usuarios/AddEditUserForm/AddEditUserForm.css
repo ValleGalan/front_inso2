@@ -1,5 +1,5 @@
 .form-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas con el mismo ancho */
-    gap: 16px; /* Espaciado entre los elementos */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; 
   }

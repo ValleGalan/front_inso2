@@ -216,14 +216,25 @@ const [estadoFormat, setEstadoFormat] = useState([]);
       </FormControl>
 
       </div>
-      <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        fullWidth
-      >
+
+        <div className="form-row">
+        <Button
+            fullWidth
+            type="submit"
+            variant="contained"
+            color="secondary"
+            >
+            Cancelar
+            </Button>
+        <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+            >
         {user ? "Actualizar" : "Crear"}
-      </Button>
+        </Button>
+        </div>
     </form>
   );
 }

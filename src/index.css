@@ -26,3 +26,8 @@ code {
   color: var(--color-primary);
   text-align: center;
 }
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px; 
+}
