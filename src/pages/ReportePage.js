@@ -9,8 +9,8 @@ export function ReportePage() {
         
         <TableReport></TableReport>
         <h1>Para probar el formulario despues lo volamos</h1>
-        <div className='form-reporte'>
-        <AddEditReporteForm />
+        <div className='add-edit-form'>
+          <AddEditReporteForm />
         </div>
         
     </div>

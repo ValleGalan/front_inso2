@@ -9,7 +9,11 @@ export function UsuarioPage() {
         
         <TableUser></TableUser>
         <h1>Para probar el formulario despues lo volamos</h1>
-        <AddEditUserForm />
+        
+        <div className='add-edit-form'> 
+          <AddEditUserForm /> 
+        </div>
+        
     </div>
   )
 }

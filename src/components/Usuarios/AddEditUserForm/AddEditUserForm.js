@@ -37,7 +37,7 @@ const [estadoFormat, setEstadoFormat] = useState([]);
 });
 
     return (
-    <form   onSubmit={formik.handleSubmit} >
+    <form   onSubmit={formik.handleSubmit}>
         <h2 className="texto-azul"> Registrar Usuario</h2>
         <p>nota: agrege la contraseña xq cuando creamos un usuario no deberiamos
             ponerle su contraseña? si decis que no va omitilo ajja y decime asi lo borro
