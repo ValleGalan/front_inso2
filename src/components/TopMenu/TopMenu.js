@@ -16,10 +16,10 @@ export function TopMenu() {
   };
  */
   return (
-    <AppBar position="fixed">
+    <AppBar position= "absolute">
       <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }} className="top-menu-admin__logo">
-        Top menu cambiara de acuerdo a la pag
+        <Typography variant="h6" sx={{ flexGrow: 1 }} className="top-menu-texto">
+        Top menu cambiara x pag
         </Typography>
 
         <IconButton aria-label="Cuenta del usuario"> <AccountCircle /> </IconButton>

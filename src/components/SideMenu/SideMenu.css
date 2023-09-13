@@ -10,3 +10,9 @@
     padding: 20px;
     width: calc(100% - 250px);
 }
+.side{
+    background-color: var(--color-primary)!important;
+    height: 100%;
+    color: var(--color-texto-primary);
+    font-weight: 'bold';
+}

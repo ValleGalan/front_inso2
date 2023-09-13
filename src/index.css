@@ -13,3 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Variables globales */
+:root {
+  --color-primary: #083675; /*fondo azul oscuro*/
+  --color-secundary: #f7f6f6; /*fondo gris */
+  --color-texto-primary:#ffffff; /*color del texto*/
+  --color-icons:#f4f6f9;
+}

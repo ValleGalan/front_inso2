@@ -5,5 +5,5 @@ https://cssgradient.io/
 
  */
 .App{
-    background-color: #FFE6C7;
+    background-color: var(--color-secundary);
 }
