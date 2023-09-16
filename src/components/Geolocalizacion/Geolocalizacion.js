@@ -8,3 +8,5 @@ export function Geolocalizacion() {
     </div>
   )
 }
+ //https://developers.google.com/maps/documentation/javascript/react-map?hl=es-419#javascript_2 
+ //VERSI CON ESTO PODEMOS AÑADIR EL MAPA

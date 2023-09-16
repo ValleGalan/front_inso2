@@ -4,6 +4,16 @@ FormControl, TextField, Button, Select,MenuItem, Checkbox, FormControlLabel, Gri
 import { useFormik } from "formik";
 import * as Yup from "yup";
 //import "./AddEditReportForm.css";
+import {
+  Jerarquia,
+  Prioridad,
+  Categoria,
+  Estado,
+  TipoReporte,
+  Rol,
+  Estado_Usuario,
+} from "../../../utils/enums";
+
 
 export function AddEditReporteForm(props) {
     const { onClose, onRefetch, reporte } = props;
@@ -28,7 +38,7 @@ export function AddEditReporteForm(props) {
     return (
     <form className="add-edit-reporte-form" onSubmit={formik.handleSubmit}>
       <h2 className="texto-azul"> Registrar Reporte</h2>
-      <div className="form-row">
+      <div className="form-row"> 
             <TextField 
             fullWidth
             variant="outlined"
@@ -88,11 +98,11 @@ export function AddEditReporteForm(props) {
             <MenuItem value="">
                 <em>Seleccione una categoría</em>
             </MenuItem>
-            {categoriesFormat.map((categoria) => (
-                <MenuItem key={categoria.value} value={categoria.value}>
-                {categoria.text}
-                </MenuItem>
-            ))}
+            {Object.values(TipoReporte).map((categoria) => (
+                        <MenuItem key={categoria} value={categoria}>
+                            {categoria}
+                        </MenuItem>
+                    ))}
             </Select>
         </FormControl>
 
@@ -153,11 +163,11 @@ export function AddEditReporteForm(props) {
             <MenuItem value="">
                 <em>Seleccione el estado de la investigación</em>
             </MenuItem>
-            {estadoFormat.map((estado) => (
-                <MenuItem key={estado.value} value={estado.value}>
-                {estado.text}
-                </MenuItem>
-            ))}
+            {Object.values(Estado).map((estado) => (
+                        <MenuItem key={estado} value={estado}>
+                            {estado}
+                        </MenuItem>
+                    ))}
             </Select>
             </FormControl>
 
@@ -173,11 +183,11 @@ export function AddEditReporteForm(props) {
             <MenuItem value="">
                 <em>Seleccione una prioridad </em>
             </MenuItem>
-            {prioridadFormat.map((prioridad) => (
-                <MenuItem key={prioridad.value} value={prioridad.value}>
-                {prioridad.text}
-                </MenuItem>
-            ))}
+            {Object.values(Prioridad).map((prioridad) => (
+                        <MenuItem key={prioridad} value={prioridad}>
+                            {prioridad}
+                        </MenuItem>
+                    ))}
             </Select>
             </FormControl>
             </div>

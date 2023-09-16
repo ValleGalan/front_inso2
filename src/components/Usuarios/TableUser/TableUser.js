@@ -15,6 +15,7 @@ import { Edit, Close as CloseIcon, Check as CheckIcon } from "@mui/icons-materia
 import { map } from "lodash";
 import "./TableUser.css";
 
+
 export function TableUser(props) {
   const { usuarios, updateUsuario, deleteUsuario } = props;
 
@@ -64,7 +65,7 @@ export function TableUser(props) {
               <TableCell>{usuario.apellidp}</TableCell>
               <TableCell>{usuario.dni}</TableCell>
               <TableCell>{usuario.rol}</TableCell>
-              <TableCell>{usuario.num_celular}</TableCell>
+              <TableCell>{usuario.num_contacto}</TableCell>
 
               <TableCell>{usuario.estado}</TableCell>
 
