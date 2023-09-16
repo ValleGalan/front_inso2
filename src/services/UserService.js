@@ -3,7 +3,7 @@ import { BASE_API } from "../utils/constanst";
 
 export async function addUserApi(data) { //, token
     try {
-        const url = `${BASE_API}/users/`;
+        const url = `${BASE_API}/users`;
         const params = {
             method: "POST",
             headers: {

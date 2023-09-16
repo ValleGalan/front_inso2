@@ -13,7 +13,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "./AddEditUserForm.css";
 import { addUserApi } from "../../../services/UserService";
-import { Jerarquia, Estado_Usuario } from "../../../utils/enums";
+import { Jerarquia, Estado_Usuario,Rol } from "../../../utils/enums";
 
 
 
@@ -197,6 +197,25 @@ export function AddEditUserForm(props) {
                     ))}
                 </Select>
 
+                <FormControl fullWidth variant="outlined" style={{ marginBottom: "16px" }}>
+                    <Select
+                        label="Rol del usuario"
+                        name="rol_usuario"
+                        value={formik.values.rol_usuario}
+                        onChange={formik.handleChange}
+                        error={!!formik.errors.rol_usuario}
+                        displayEmpty
+                    >
+                        <MenuItem value="">
+                            <em>Seleccione una rol_usuario </em>
+                        </MenuItem>
+                        {Object.values(Rol).map((rol_usuario) => (
+                            <MenuItem key={rol_usuario} value={rol_usuario}>
+                                {rol_usuario}
+                            </MenuItem>
+                        ))}
+                    </Select>
+                </FormControl>
             </div>
 
             <div className="form-row">
@@ -233,6 +252,7 @@ function initialValues(data) {
         legajo: data?.legajo || "",
         estado: data?.estado || "",
         jerarquia: data?.jerarquia || "",
+        rol_usuario: data?.rol_usuario || "",
         //is_active: data?.is_active || false,
         //is_staff: data?.is_staff || false,
     };
