@@ -19,7 +19,7 @@ export function AddEditReporteForm(props) {
   const [estadoFormat, setestadoFormat] = useState([]);
 
   //const { categories, getCategories } = useCategory();
-  //const { addReporte, updateReporte } = useReporte();
+  //const { addReporte, updateReporte } = useReporte(); 
 
   const formik = useFormik({
     initialValues: initialValues(reporte),
