@@ -53,11 +53,6 @@ export function AddEditUserForm(props) {
     return (
         <form onSubmit={formik.handleSubmit}>
             <h2 className="texto-azul"> Registrar Usuario</h2>
-            <p>nota: agrege la contraseña xq cuando creamos un usuario no deberiamos
-                ponerle su contraseña? si decis que no va omitilo ajja y decime asi lo borro
-                tambien puse eso de esado de usuario fijate si va o lo borramos,
-                en los campos num celular y telefono lo uni como num celular
-            </p>
             <div className="form-row">
                 <TextField
                     fullWidth

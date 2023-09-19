@@ -13,6 +13,7 @@ import {
 import { Edit, Close as CloseIcon } from "@mui/icons-material";
 import { map } from "lodash";
 import "./TableReport.css";
+import { Refresh as RefreshIcon } from "@mui/icons-material";
 
 export function TableReport(props) {
   const { reportes, updateReporte, deleteReporte } = props;
@@ -66,23 +67,45 @@ export function TableReport(props) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {map(reportes, (reporte, index) => (
-              <TableRow key={index}>
-                <TableCell>{reporte.num_reporte}</TableCell>
-                <TableCell>{reporte.prioridad} </TableCell>
-                <TableCell>{reporte.categoria}</TableCell>
-                <TableCell>{reporte.investigador}</TableCell>
-                <TableCell>{reporte.estado}</TableCell>
+              <TableRow >
+                <TableCell>123</TableCell>
+                <TableCell>MEDIA </TableCell>
+                <TableCell>A1_PREADOLESCENTE_ACTO_SEXUAL</TableCell>
+                <TableCell>Luis Altos</TableCell>
+                <TableCell>EN CURSO</TableCell>
 
                 <TableCell>
-                  <Actions
-                    reporte={reporte}
-                    updateReporte={updateReporte}
-                    deleteReporte={deleteReporte}
-                  />
+                <IconButton aria-label="Actualizar">
+                  <RefreshIcon />
+                 </IconButton>
                 </TableCell>
               </TableRow>
-            ))}
+              <TableRow >
+                <TableCell>234</TableCell>
+                <TableCell>BAJA </TableCell>
+                <TableCell>B1_ADOLESCENTE_ACTO_SEXUAL</TableCell>
+                <TableCell>Pedro Espinosa</TableCell>
+                <TableCell>HECHO_ESCLARECIDO</TableCell>
+
+                <TableCell>
+                <IconButton aria-label="Actualizar">
+                  <RefreshIcon />
+                 </IconButton>
+                </TableCell>
+              </TableRow>
+              <TableRow >
+                <TableCell>123</TableCell>
+                <TableCell>MEDIA </TableCell>
+                <TableCell>A2_PREADOLESCENTE_EXPOSICIÓN_LASCIVA</TableCell>
+                <TableCell>Miguel Pedrosa</TableCell>
+                <TableCell>EN CURSO</TableCell>
+
+                <TableCell>
+                <IconButton aria-label="Actualizar">
+                  <RefreshIcon />
+                 </IconButton>
+                </TableCell>
+              </TableRow>
           </TableBody>
         </Table>
       </TableContainer>

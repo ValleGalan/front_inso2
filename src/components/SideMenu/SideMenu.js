@@ -42,11 +42,7 @@ function MenuLeft(props) {
           <ListItemText primary="Usuarios" />
         </ListItem>
 
-        <ListItem button component={Link} to="/notificacion" selected={pathname === "/notificacion"}>
-          <ListItemIcon> <NotificationsActive style={{ color: 'white' }}/>   </ListItemIcon>
-          <ListItemText primary="Notificación" />
-        </ListItem>
-
+ 
         
       </List>
     </Drawer>
@@ -54,6 +50,13 @@ function MenuLeft(props) {
 }
 
 /*
+       <ListItem button component={Link} to="/notificacion" selected={pathname === "/notificacion"}>
+          <ListItemIcon> <NotificationsActive style={{ color: 'white' }}/>   </ListItemIcon>
+          <ListItemText primary="Notificación" />
+        </ListItem>
+
+
+
 {auth.me?.is_staff && (
           <ListItem button component={Link} to="/admin/users" selected={pathname === "/admin/users"}>
             <ListItemIcon>

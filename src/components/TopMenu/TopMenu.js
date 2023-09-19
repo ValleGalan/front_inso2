@@ -17,13 +17,10 @@ export function TopMenu() {
  */
   return (
       <AppBar color="" style={{ paddingLeft: "250px" }}>
-      <Toolbar>
-        <Typography variant="h6" sx={{ flexGrow: 1 }} className="top-menu-texto">
-        Top menu cambiara x pag
-        </Typography>
+      <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
 
         <IconButton aria-label="Cuenta del usuario"> <AccountCircle /> </IconButton>
-        <Typography variant="body1" sx={{ mr: 2 }}> nombre user </Typography>
+        <Typography variant="body1" sx={{ mr: 2 }}> Juan Jimenez </Typography>
 
         <IconButton
           aria-label="Cerrar sesión"
